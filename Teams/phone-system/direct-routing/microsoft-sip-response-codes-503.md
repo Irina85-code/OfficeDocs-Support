@@ -31,6 +31,13 @@ This article provides troubleshooting information for various combinations of th
   - If the bot is provided by Microsoft, such as the built-in call recording, [contact Microsoft Support](https://support.microsoft.com/contactus).
   - If the bot is your own bot or from a third-party provider, work with the bot provider to verify that the bot is set up correctly.
 
+## 540998 503 Service Unavailable - Service state: Inactive/DrainingTransactions
+
+- Microsoft response code: **540998**
+- SIP response code: **503**
+- Suggested actions:
+  - Expected reject during offloading of Microsoft SIP end points for maintenance. The Microsoft SIP Signaling FQDNs point to available endpoints enough time in advance for the SBC to resolve the FQDNs to new endpoints and send traffic to these, so there shouldn't be too many errors like this in normal circumstances. However, if there are many of these errors, it might make sense to check SBC configuration, if it resolves DNS often enough to not send SIP requests to inactive/shutting down Microsoft end points. Ideally it should be resolved every 15 minutes or less.
+
 ## 560503 503 Service unavailable. SBC undergoing maintenance or temporarily overloaded
 
 - Microsoft response code: **560503**
