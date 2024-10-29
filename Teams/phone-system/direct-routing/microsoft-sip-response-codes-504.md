@@ -38,6 +38,13 @@ This article provides troubleshooting information for various combinations of th
 - Suggested actions:  
   - Make sure that requests and responses include SIP version "SIP/2.0" in the Request-URI, Via header, and other relevant headers. For more information, see [Direct Routing - SIP protocol](/microsoftteams/direct-routing-protocols-sip).
 
+## 549018 504 Unable to deliver INVITE: Invalid Request/Response line
+
+- Microsoft response code: **549018**
+- SIP response code: **504**
+- Suggested actions:
+  - The error might be represented by slightly different related response code phrases. However, this error in general means malformed SIP message - something is wrong with SIP message received from customer's SBC. Check the SBC configuration to determine why it offers invalid/unsupported SIP message format (e.g. missing FROM header, invalid CSeq header) in request to Microsoft
+
 ## 569002 504 Unable to deliver INVITE: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
 
 - Microsoft response code: **569002**
