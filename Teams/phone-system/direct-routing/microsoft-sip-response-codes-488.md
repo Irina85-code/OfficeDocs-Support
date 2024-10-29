@@ -43,3 +43,10 @@ This article provides troubleshooting information for various combinations of th
 - SIP response code: **488**
 - Suggested actions:  
   - Media bypass doesn't work if the SBC doesn't provide any ICE candidates in its SDP offer. Make sure that you enable ICE Lite on the SBC. For more information about media bypass, see [About Media Bypass with Direct Routing](/microsoftteams/direct-routing-plan-media-bypass#about-media-bypass-with-direct-routing) and [Direct Routing - media protocols](/microsoftteams/direct-routing-protocols-media).
+ 
+## 531052 488 Cannot negotiate a new modality with blackhole media
+
+- Microsoft response code: **531052**
+- SIP response code: **488**
+- Suggested actions:
+  - SBC sent SIP message with SDP that has a connection address of 0.0.0.0. This is not supported by Microsoft SIP stack. For more information about deviations from the RFCs, see [Direct Routing - Deviations from the RFCs](https://learn.microsoft.com/en-us/microsoftteams/direct-routing-protocols#deviations-from-the-rfcs). 
