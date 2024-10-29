@@ -66,6 +66,14 @@ This article provides troubleshooting information for various combinations of th
 - Suggested actions:  
   - Check the [inbound call blocking settings](/microsoftteams/block-inbound-calls) for blocked caller numbers.
 
+## 510546 403 Get Outbound Direct routing - no trunk config found by LBR selection criteria
+
+- Microsoft response code: **510546**
+- SIP response code: **403**
+- Suggested actions:
+  - If Location Based Routing feature is being used, this error might be by design that the user is not allowed to make calls from their current site, but in other cases could be caused by misconfiguration as well. Verify that LBR for Direct Routing is configured correctly. For more information about LBR configuration, see [Plan Location Based Routing](https://learn.microsoft.com/en-us/microsoftteams/location-based-routing-plan).
+  - If Direct Routing is not used at all, then it's most likely a misconfiguration of Teams Calling Policy and PreventTollBypass is set to True, for more information, see [Set-CsTeamsCallingPolicy](https://learn.microsoft.com/en-us/powershell/module/teams/set-csteamscallingpolicy?view=teams-ps#-preventtollbypass). 
+
 ## 510560 403 User is not Enterprise Voice enabled
 
 - Microsoft response code: **510560**
