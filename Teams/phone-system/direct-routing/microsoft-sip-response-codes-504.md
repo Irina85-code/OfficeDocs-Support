@@ -43,7 +43,7 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **549018**
 - SIP response code: **504**
 - Suggested actions:
-  - The error might be represented by slightly different related response code phrases. However, this error in general means malformed SIP message - something is wrong with SIP message received from customer's SBC. Check the SBC configuration to determine why it offers invalid/unsupported SIP message format (e.g. missing FROM header, invalid CSeq header) in request to Microsoft
+  - The error might be represented by slightly different related response code phrases. However, this error in general means malformed SIP message - something is wrong with SIP message received from SBC. Check the SBC configuration to determine why it offers invalid/unsupported SIP message format (e.g. missing FROM header, invalid CSeq header) in request to Microsoft
 
 ## 569002 504 Unable to deliver INVITE: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
 
@@ -122,3 +122,25 @@ This article provides troubleshooting information for various combinations of th
   - Request a certificate that's signed by one of the public root certification authorities that are listed in [public trusted certificate for the SBC](/microsoftteams/direct-routing-plan#public-trusted-certificate-for-the-sbc).
 
   If you have multiple TLS profiles, check that you're using a profile that has the correct certificate when you connect to the Direct Routing interface. If you have multiple TLS profiles on the SBC, make sure that you select a profile that's signed by using a certificate that's trusted by Direct Routing.
+
+## 569015 504 Unable to deliver INVITE: No such host is known
+
+- Microsoft response code: **569015**
+- SIP response code: **504**
+- Suggested actions:
+  - DNS issue on SBC side. Check why FQDN of the SBC couldn't be resolved through DNS.
+ 
+## 569016 504 Unable to deliver INVITE/ACK: The requested name is valid, but no data of the requested type was found
+
+- Microsoft response code: **569016**
+- SIP response code: **504**
+- Suggested actions:
+  - The error might be represented by slightly different related response code phrases. However, this error code means that DNS record was found, but not of A or AAAA type (most likely only TXT record was returned, which was added for domain verification purpose). Make sure that proper DNS record type is configured.
+
+## 569018 504 Unable to deliver INVITE: Invalid Request/Response line
+
+- Microsoft response code: **569018**
+- SIP response code: **504**
+- Suggested actions:
+  - The error might be represented by slightly different related response code phrases. However, this error in general means malformed SIP message - something is wrong with SIP message received from SBC. Check the SBC configuration to determine why it offers invalid/unsupported SIP message format (e.g. missing FROM header, extra/wrong character, etc). 
+
