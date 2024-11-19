@@ -21,7 +21,7 @@ ms.reviewer: teddygyabaah
 
 # SIP response code 403
 
-This article provides troubleshooting information for various combinations of the SIP 403 error and Microsoft response codes.
+This article provides troubleshooting information for various combinations of the "SIP 403" error and Microsoft response codes.
 
 ## 10199 403 Call rejected as private calling is disabled for the callee
 
@@ -42,8 +42,8 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **10553**
 - SIP response code: **403**
 - Suggested actions:  
-  - Verify that [compliance recording](/microsoftteams/teams-recording-policy) is set up correctly, including provisioning of the recorder bot.
-  - Work with the compliance recording partner who provides the recorder service to check why the bot can't be invited.
+  - Verify that [compliance recording](/microsoftteams/teams-recording-policy) is set up correctly. This includes provisioning of the recorder bot.
+  - Work together with the compliance recording partner who provides the recorder service to check why the bot can't be invited.
   
 ## 510532 403 Get Inbound Direct routing - RuntimeApi trunk config not found for customer
 
@@ -71,7 +71,7 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **510546**
 - SIP response code: **403**
 - Suggested actions:
-  - If Location Based Routing feature is being used, this error might be by design that the user is not allowed to make calls from their current site, but in other cases could be caused by misconfiguration as well. Verify that LBR for Direct Routing is configured correctly. For more information about LBR configuration, see [Plan Location Based Routing](https://learn.microsoft.com/en-us/microsoftteams/location-based-routing-plan).
+  - If the Location Based Routing feature is used, this error message might be by design to indicate that the user is not allowed to make calls from their current site. However, in other cases, this error could be caused by a misconfiguration. Verify that LBR for Direct Routing is configured correctly. For more information about LBR configuration, see [Plan Location Based Routing](https://learn.microsoft.com/en-us/microsoftteams/location-based-routing-plan).
   - If Direct Routing is not used at all, then it's most likely a misconfiguration of Teams Calling Policy and PreventTollBypass is set to True, for more information, see [Set-CsTeamsCallingPolicy](https://learn.microsoft.com/en-us/powershell/module/teams/set-csteamscallingpolicy?view=teams-ps#-preventtollbypass). 
 
 ## 510560 403 User is not Enterprise Voice enabled
@@ -93,7 +93,7 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **510562**
 - SIP response code: **403**
 - Suggested actions:  
-  - Verify that the affected user is assigned a Phone System license and is correctly [enabled for Direct Routing](/microsoftteams/direct-routing-enable-users). For more information about issues with outbound calls, see [Issues that affect outbound Direct Routing calls](/microsoftteams/troubleshoot/phone-system/direct-routing/issues-with-outbound-calls).
+  - Verify that the affected user is assigned a Phone System license and is correctly [enabled for Direct Routing](/microsoftteams/direct-routing-enable-users). For more information about issues that affect outbound calls, see [Issues that affect outbound Direct Routing calls](/microsoftteams/troubleshoot/phone-system/direct-routing/issues-with-outbound-calls).
 
 ## 510563 403 User is only allowed to make domestic calls. This is an international call
 
@@ -114,4 +114,4 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **510559**
 - SIP response code: **403**
 - Suggested actions:  
-  - Make sure that the dialed number in Teams matches a corresponding number pattern in a voice route for the given user. In some cases, this error occurs because an incorrect number is dialed, or the customer's own internal policy prevents calls to specific countries/regions, or number patterns.
+  - Make sure that the dialed number in Teams matches a corresponding number pattern in a voice route for the given user. In some cases, this error occurs because an incorrect number is dialed, or the customer's own internal policy prevents calls to specific countries, regions, or number patterns.
