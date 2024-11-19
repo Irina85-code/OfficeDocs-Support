@@ -21,7 +21,7 @@ ms.reviewer: teddygyabaah
 
 # SIP response code 488
 
-This article provides troubleshooting information for various combinations of the SIP 488 error and Microsoft response codes.
+This article provides troubleshooting information for various combinations of the "SIP 488" error and Microsoft response codes.
 
 ## 531000 488 InternalDiagCode: CannotSupportAnyMedia, InternalErrorPhrase: Invalid SDP offer: no media acceptable
 
@@ -49,4 +49,4 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **531052**
 - SIP response code: **488**
 - Suggested actions:
-  - SBC sent SIP message with SDP that has a connection address of 0.0.0.0. This is not supported by Microsoft SIP stack. For more information about deviations from the RFCs, see [Direct Routing - Deviations from the RFCs](https://learn.microsoft.com/en-us/microsoftteams/direct-routing-protocols#deviations-from-the-rfcs). 
+  - SBC sent a SIP message with SDP that has a connection address of 0.0.0.0. This is not supported by Microsoft SIP stack. For more information about deviations from the RFCs, see [Direct Routing - Deviations from the RFCs](https://learn.microsoft.com/en-us/microsoftteams/direct-routing-protocols#deviations-from-the-rfcs). 
