@@ -135,7 +135,7 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **569016**
 - SIP response code: **504**
 - Suggested actions:
-  - The error might be represented by slightly different related response code phrases. However, this error code indicates that DNS record was found, but is not an "A" or "AAAA" type. (Most likely, only a text record was returned and added for domain verification.) Make sure that the correct DNS record type is configured.
+  - The error might be represented by slightly different related response code phrases. However, this error code indicates that a DNS record was found, but it's not an "A" or "AAAA" type. (Most likely, only a text record was returned and added for domain verification.) Make sure that the correct DNS record type is configured.
 
 ## 569018 504 Unable to deliver INVITE: Invalid Request/Response line
 
