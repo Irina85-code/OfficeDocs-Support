@@ -21,7 +21,7 @@ ms.reviewer: teddygyabaah
 
 # SIP response code 504
 
-This article provides troubleshooting information for various combinations of the SIP 504 error and Microsoft response codes.
+This article provides troubleshooting information for various combinations of the "SIP 504" error and Microsoft response codes.
 
 ## 549002 504 Unable to deliver INVITE: TlsTransport is not connected, State=Disconnected
 
@@ -29,7 +29,7 @@ This article provides troubleshooting information for various combinations of th
 - SIP response code: **504**
 - Suggested actions:  
   - Check whether the Session Border Controller (SBC) is functional.
-  - Check whether the SBC is reachable through the specific IP and port. Also, check your firewall settings to make sure that connection to SBC isn't blocked.
+  - Check whether the SBC is reachable through the specified IP and port. Also, check your firewall settings to make sure that connectivity to SBC isn't blocked.
 
 ## 549002 504 Unable to deliver INVITE: Invalid Request/Response line
 
@@ -43,7 +43,7 @@ This article provides troubleshooting information for various combinations of th
 - Microsoft response code: **549018**
 - SIP response code: **504**
 - Suggested actions:
-  - The error might be represented by slightly different related response code phrases. However, this error in general means malformed SIP message - something is wrong with SIP message received from SBC. Check the SBC configuration to determine why it offers invalid/unsupported SIP message format (e.g. missing FROM header, invalid CSeq header) in request to Microsoft
+  - The error might be represented by slightly different related response code phrases. However, this error in general indicates a malformed SIP message. That is, something is wrong in the SIP message that's received from SBC. Check the SBC configuration to determine why it offers an invalid or unsupported SIP message format (for example, a missing FROM header or an invalid CSeq header) in requests to Microsoft
 
 ## 569002 504 Unable to deliver INVITE: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
 
@@ -51,7 +51,7 @@ This article provides troubleshooting information for various combinations of th
 - SIP response code: **504**
 - Suggested actions:  
   - Check whether the SBC is functional.
-  - Check whether the SBC is reachable through the specific IP and port. Also, check your firewall settings to make sure that connection to SBC isn't blocked.
+  - Check whether the SBC is reachable through the specified IP and port. Also, check your firewall settings to make sure that connectivity to SBC isn't blocked.
 
 ## 569002 504 Unable to deliver INVITE: No connection could be made because the target machine actively refused it
 
@@ -59,7 +59,7 @@ This article provides troubleshooting information for various combinations of th
 - SIP response code: **504**
 - Suggested actions:  
   - Check whether the SBC is functional.
-  - Check whether the SBC is reachable through the specific IP and port. Also, check your firewall settings to make sure that connection to SBC isn't blocked.
+  - Check whether the SBC is reachable through the specified IP and port. Also, check your firewall settings to make sure that connectivity to SBC isn't blocked.
 
 ## 569002 504 Unable to deliver INVITE: outgoing TLS negotiation failed; HRESULT=0x80096004
 
@@ -67,7 +67,7 @@ This article provides troubleshooting information for various combinations of th
 - SIP response code: **504**
 - Suggested actions:  
   - Check whether the SBC is functional.
-  - Check whether the SBC is reachable through the specific IP and port. Also, check your firewall settings to make sure that connection to SBC isn't blocked.
+  - Check whether the SBC is reachable through the specified IP and port. Also, check your firewall settings to make sure that connectivity to SBC isn't blocked.\
 
 ## 569002 504 Unable to deliver INVITE: outgoing TLS negotiation failed; Wrong target principal name configured. HRESULT=0x80090322 CERT_E_WRONG_USAGE
 
@@ -96,7 +96,7 @@ This article provides troubleshooting information for various combinations of th
 - SIP response code: **504**
 - Suggested actions:  
   - Check whether the SBC is functional.
-  - Check whether the SBC is reachable through the specific IP and port. Also, check your firewall settings to make sure that connection to SBC isn't blocked.
+  - Check whether the SBC is reachable through the specified IP and port. Also, check your firewall settings to make sure that connectivity to SBC isn't blocked.
 
 ## 569003 504 Unable to deliver INVITE: outgoing TLS negotiation failed; HRESULT=0x80090326
 
@@ -112,7 +112,7 @@ This article provides troubleshooting information for various combinations of th
 - Suggested actions:  
   - Renew the SBC certificate.
 
-  **Note:** When you renew the SBC certificate, you must remove the TLS connections that were established from the SBC to Microsoft by using the old certificate, and re-establish them by using the new certificate. Doing this will make sure that certificate expiration warnings aren't triggered in the Microsoft Teams admin center. To remove the old TLS connections, restart the SBC during a timeframe that has low traffic, such as a maintenance window. If you can't restart the SBC, contact the vendor for instructions to force the closure of all old TLS connections.
+  **Note:** When you renew the SBC certificate, you must remove the TLS connections that were established from the SBC to Microsoft by using the old certificate, and re-establish them by using the new certificate. Doing this will make sure that certificate expiration warnings aren't triggered in the Microsoft Teams admin center. To remove the old TLS connections, restart the SBC during a low-traffic period, such as a maintenance window. If you can't restart the SBC, contact the vendor for instructions to force the closure of all old TLS connections.
 
 ## 569009 504 Unable to deliver INVITE: outgoing TLS negotiation failed; HRESULT=0x80090325 SEC_E_UNTRUSTED_ROOT
 
@@ -121,26 +121,25 @@ This article provides troubleshooting information for various combinations of th
 - Suggested actions:  
   - Request a certificate that's signed by one of the public root certification authorities that are listed in [public trusted certificate for the SBC](/microsoftteams/direct-routing-plan#public-trusted-certificate-for-the-sbc).
 
-  If you have multiple TLS profiles, check that you're using a profile that has the correct certificate when you connect to the Direct Routing interface. If you have multiple TLS profiles on the SBC, make sure that you select a profile that's signed by using a certificate that's trusted by Direct Routing.
+  If you have multiple TLS profiles, verify that you're using a profile that has the correct certificate when you connect to the Direct Routing interface. If you have multiple TLS profiles on the SBC, make sure that you select a profile that's signed by using a certificate that's trusted by Direct Routing.
 
 ## 569015 504 Unable to deliver INVITE: No such host is known
 
 - Microsoft response code: **569015**
 - SIP response code: **504**
 - Suggested actions:
-  - DNS issue on SBC side. Check why FQDN of the SBC couldn't be resolved through DNS.
+  - This is a DNS issue on the SBC side. Check why the FQDN of the SBC couldn't be resolved through DNS.
  
 ## 569016 504 Unable to deliver INVITE/ACK: The requested name is valid, but no data of the requested type was found
 
 - Microsoft response code: **569016**
 - SIP response code: **504**
 - Suggested actions:
-  - The error might be represented by slightly different related response code phrases. However, this error code means that DNS record was found, but not of A or AAAA type (most likely only TXT record was returned, which was added for domain verification purpose). Make sure that proper DNS record type is configured.
+  - The error might be represented by slightly different related response code phrases. However, this error code indicates that DNS record was found, but is not an "A" or "AAAA" type. (Most likely, only a text record was returned and added for domain verification.) Make sure that the correct DNS record type is configured.
 
 ## 569018 504 Unable to deliver INVITE: Invalid Request/Response line
 
 - Microsoft response code: **569018**
 - SIP response code: **504**
 - Suggested actions:
-  - The error might be represented by slightly different related response code phrases. However, this error in general means malformed SIP message - something is wrong with SIP message received from SBC. Check the SBC configuration to determine why it offers invalid/unsupported SIP message format (e.g. missing FROM header, extra/wrong character, etc). 
-
+  - The error might be represented by slightly different related response code phrases. However, this error in general indicates a malformed SIP message. That is, something is wrong in the SIP message that was received from SBC. Check the SBC configuration to determine why it offers an invalid or unsupported SIP message format (for example, a missing FROM header, or an extra or incorrect character). 
